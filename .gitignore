@@ -340,3 +340,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Custom
+download_all.sh
+*_credentials.json
+GoogleDriveToken/
+chromedata/
