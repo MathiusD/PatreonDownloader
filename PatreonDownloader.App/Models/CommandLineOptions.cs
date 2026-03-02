@@ -64,5 +64,8 @@ namespace PatreonDownloader.App.Models
 
         [Option("proxy-server-address", Required = false, HelpText = "The address of proxy server to use in the following format: [<proxy-scheme>://]<proxy-host>[:<proxy-port>]. Supported protocols: http(s), socks4, socks4a, socks5.")]
         public string ProxyServerAddress { get; set; }
+
+        [Option("user-agent", Required = false, HelpText = "The user agent used during crawling", Default = "Patreon/72.2.28 (Android; Android 14; Scale/2.10)")]
+        public string UserAgent { get; set; }
     }
 }
