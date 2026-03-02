@@ -1,7 +1,10 @@
-default_target: clean build_app build_plugins config_plugins
+default_target: clean dotnet_clean build_app build_plugins config_plugins
 
 clean:
 	@rm -rf bin
+
+dotnet_clean:
+	@dotnet clean
 
 build_app:
 	@dotnet publish PatreonDownloader.App -c Release -r linux-x64 --self-contained -f net9.0 -o bin/
