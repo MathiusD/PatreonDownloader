@@ -10,6 +10,8 @@ namespace PatreonDownloader.App.Models
         public string Url { get; set; }
         [Option("descriptions", Required = false, HelpText = "Save post descriptions", Default = false)]
         public bool SaveDescriptions { get; set; }
+        [Option("json-descriptions", Required = false, HelpText = "Save post jsons descriptions", Default = false)]
+        public bool SaveJsonDescriptions { get; set; }
         [Option("embeds", Required = false, HelpText = "Save embedded content metadata", Default = false)]
         public bool SaveEmbeds { get; set; }
         [Option("json", Required = false, HelpText = "Save json data", Default = false)]

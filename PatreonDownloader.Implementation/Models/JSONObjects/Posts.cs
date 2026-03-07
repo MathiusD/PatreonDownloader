@@ -72,6 +72,8 @@ namespace PatreonDownloader.Implementation.Models.JSONObjects.Posts
         public int? CommentCount { get; set; }
         [JsonProperty("content")]
         public string Content { get; set; }
+        [JsonProperty("content_json_string")]
+        public string ContentJson { get; set; }
         [JsonProperty("current_user_can_delete")]
         public bool CurrentUserCanDelete { get; set; }
         [JsonProperty("current_user_can_view")]

@@ -8,6 +8,7 @@ args="${*:3}"
     --url https://www.patreon.com/"$author"/posts \
     --download-directory "$rootFolder"/"$author" \
     --descriptions \
+    --json-descriptions \
     --embeds \
     --campaign-images \
     --json \

@@ -13,6 +13,8 @@ namespace PatreonDownloader.Implementation.Models
     {
         public bool SaveDescriptions { get; init; }
 
+        public bool SaveJsonDescriptions { get; init; }
+
         public bool SaveEmbeds { get; init; }
 
         public bool SaveJson { get; init; }
@@ -58,6 +60,7 @@ namespace PatreonDownloader.Implementation.Models
         public PatreonDownloaderSettings()
         {
             SaveDescriptions = true;
+            SaveJsonDescriptions = false;
             SaveEmbeds = true;
             SaveJson = true;
             SaveAvatarAndCover = true;

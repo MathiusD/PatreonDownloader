@@ -155,6 +155,7 @@ namespace PatreonDownloader.App
                 CookieContainer = null,
                 SaveAvatarAndCover = commandLineOptions.SaveAvatarAndCover,
                 SaveDescriptions = commandLineOptions.SaveDescriptions,
+                SaveJsonDescriptions = commandLineOptions.SaveJsonDescriptions,
                 SaveEmbeds = commandLineOptions.SaveEmbeds,
                 SaveJson = commandLineOptions.SaveJson,
                 DownloadDirectory = commandLineOptions.DownloadDirectory,
