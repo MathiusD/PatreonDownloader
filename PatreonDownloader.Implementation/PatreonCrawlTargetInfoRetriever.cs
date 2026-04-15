@@ -42,7 +42,16 @@ namespace PatreonDownloader.Implementation
                 Regex regex = new Regex("\\\\?\"pageBootstrap\\\\?\": ?\\{\\\\?\"campaign\\\\?\": ?\\{\\\\?\"data\\\\?\": ?\\{\\\\?\"id\\\\?\": ?\\\\?\"(\\d+)\\\\?\",\\\\?\"type\\\\?\": ?\\\\?\"campaign\\\\?\"");
                 Match match = regex.Match(pageHtml);
                 if (!match.Success)
-                    throw new UniversalDownloaderException($"Unable to retrieve campaign id: regex failed. Report this error to developer.");
+                {
+                    _logger.Debug("Unable to find id with new regex we fallback to previous selection.");
+                    Regex legacyRegex = new Regex("\\\\?\"self\\\\?\": ?\\\\?\"https:\\/\\/www\\.patreon\\.com\\/api\\/campaigns\\/(\\d+)\\\\?\"");
+                    Match legacyMatch = regex.Match(pageHtml);
+                    if (!legacyMatch.Success) {
+                        throw new UniversalDownloaderException($"Unable to retrieve campaign id: regex failed. Report this error to developer");
+                    }
+
+                    return Convert.ToInt64(legacyMatch.Groups[1].Value);
+                }
 
                 return Convert.ToInt64(match.Groups[1].Value);
             }
