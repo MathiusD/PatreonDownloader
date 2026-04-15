@@ -39,7 +39,7 @@ namespace PatreonDownloader.Implementation
             {
                 string pageHtml = await _webDownloader.DownloadString(url);
 
-                Regex regex = new Regex("\\\\?\"self\\\\?\": ?\\\\?\"https:\\/\\/www\\.patreon\\.com\\/api\\/campaigns\\/(\\d+)\\\\?\"");
+                Regex regex = new Regex("\\\\?\"pageBootstrap\\\\?\": ?\\{\\\\?\"campaign\\\\?\": ?\\{\\\\?\"data\\\\?\": ?\\{\\\\?\"id\\\\?\": ?\\\\?\"(\\d+)\\\\?\",\\\\?\"type\\\\?\": ?\\\\?\"campaign\\\\?\"");
                 Match match = regex.Match(pageHtml);
                 if (!match.Success)
                     throw new UniversalDownloaderException($"Unable to retrieve campaign id: regex failed. Report this error to developer.");
