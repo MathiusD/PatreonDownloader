@@ -45,7 +45,7 @@ namespace PatreonDownloader.Implementation
                 {
                     _logger.Debug("Unable to find id with new regex we fallback to previous selection.");
                     Regex legacyRegex = new Regex("\\\\?\"self\\\\?\": ?\\\\?\"https:\\/\\/www\\.patreon\\.com\\/api\\/campaigns\\/(\\d+)\\\\?\"");
-                    Match legacyMatch = regex.Match(pageHtml);
+                    Match legacyMatch = legacyRegex.Match(pageHtml);
                     if (!legacyMatch.Success) {
                         throw new UniversalDownloaderException($"Unable to retrieve campaign id: regex failed. Report this error to developer");
                     }
